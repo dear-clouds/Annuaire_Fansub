@@ -59,7 +59,7 @@ class IndexController extends BaseController {
 		->orderBy('created_at', 'desc')
 		->paginate(6);
 		
-		$image = Image::join('sorties', 'images.sortie_id', '=', 'sorties.id')->get();
+		$image = Image::join('sorties', 'sorties.id', '=', 'images.sortie_id')->first();
 
 		return View::make('index', compact('feed', 'sorties', 'image'));
 	}
@@ -72,8 +72,6 @@ class IndexController extends BaseController {
 		$users = User::orderBy('created_at', 'DESC')->paginate(10);
 		$sorties = Sortie::orderBy('created_at', 'DESC')->paginate(10);
 
-
-        // var_dump($username);
 		return View::make('admin', compact('users', 'sorties'));
 	}
 

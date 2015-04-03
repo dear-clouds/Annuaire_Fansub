@@ -92,7 +92,7 @@
         <div class="col-md-12 text-center" id="bloc-title-team"></div>
         <div><a href="sortie/{{ $sortie->id }}" class="col-md-5 text-center" id="title-next">{{ $sortie->categorie }}</a></div>
         <div class="col-md-5 text-center" id="bloc-title-next"></div>
-        <span class=""><img src="images/Mio./4dP2XxVvuYJtAGPqyU6V.jpg" alt="{{ $sortie->title }}"></span>
+        <span class=""><img src="{{ $image->url }}" alt="{{ $sortie->title }}"></span>
       </div>
       
       

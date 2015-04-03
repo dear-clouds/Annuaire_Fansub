@@ -331,17 +331,6 @@ trait ValidatingTrait {
     }
 
     /**
-     * Set the validation messages to be used by the validator.
-     *
-     * @param  array $messages
-     * @return void
-     */
-    public function setMessages(array $messages)
-    {
-        $this->validationMessages = $messages;
-    }
-
-    /**
      * Get the validation error messages from the model.
      *
      * @return \Illuminate\Support\MessageBag
@@ -371,7 +360,7 @@ trait ValidatingTrait {
      */
     public function isValid($ruleset = null, $mergeWithSaving = true)
     {
-        $rules = $this->getRuleset($ruleset, $mergeWithSaving) ?: $this->getDefaultRules();
+        $rules = is_array($ruleset) ? $ruleset : $this->getRuleset($ruleset, $mergeWithSaving) ?: $this->getDefaultRules();
 
         return $this->performValidation($rules);
     }
@@ -396,7 +385,7 @@ trait ValidatingTrait {
     /**
      * Returns whether the model is invalid or not.
      *
-     * @param  string $ruleset
+     * @param  mixed  $ruleset
      * @param  bool   $mergeWithSaving
      * @return bool
      */
@@ -483,7 +472,7 @@ trait ValidatingTrait {
             $this->getModel()->getAttributes()
         );
 
-        if ($this->exists && $this->getInjectUniqueIdentifier())
+        if ($this->getInjectUniqueIdentifier())
         {
             $rules = $this->injectUniqueIdentifierToRules($rules);
         }
@@ -604,7 +593,7 @@ trait ValidatingTrait {
 
             foreach ($ruleset as &$rule)
             {
-                if (starts_with($rule, 'unique'))
+                if (starts_with($rule, 'unique:'))
                 {
                     $rule = $this->prepareUniqueRule($rule, $field);
                 }
@@ -624,7 +613,7 @@ trait ValidatingTrait {
      */
     protected function prepareUniqueRule($rule, $field)
     {
-        $parameters = explode(',', substr($rule, 7));
+        $parameters = array_filter(explode(',', substr($rule, 7)));
 
         // If the table name isn't set, get it.
         if ( ! isset($parameters[0]))
@@ -638,10 +627,19 @@ trait ValidatingTrait {
             $parameters[1] = $field;
         }
 
-        // If the identifier isn't set, add it.
-        if ( ! isset($parameters[2]) || strtolower($parameters[2]) === 'null')
+        if($this->exists)
         {
-            $parameters[2] = $this->getModel()->getKey();
+            // If the identifier isn't set, add it.
+            if ( ! isset($parameters[2]) || strtolower($parameters[2]) === 'null')
+            {
+                $parameters[2] = $this->getModel()->getKey();
+            }
+
+            // Add the primary key if it isn't set in case it isn't id.
+            if ( ! isset($parameters[3]))
+            {
+                $parameters[3] = $this->getModel()->getKeyName();
+            }
         }
 
         return 'unique:' . implode(',', $parameters);

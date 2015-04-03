@@ -6,7 +6,6 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"simplepie/simplepie": "dev-master",
-		"orchestra/imagine": "3.0.*@dev",
 		"bishopb/laravel-forums": "~0.1"
 	},
 	"autoload": {

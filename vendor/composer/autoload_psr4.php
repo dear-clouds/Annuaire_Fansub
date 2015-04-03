@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Watson\\Validating\\' => array($vendorDir . '/watson/validating/src'),
-    'Orchestra\\Imagine\\' => array($vendorDir . '/orchestra/imagine/src/Imagine'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'BishopB\\Forum\\' => array($vendorDir . '/bishopb/laravel-forums/src'),
 );

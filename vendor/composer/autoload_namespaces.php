@@ -32,7 +32,6 @@ return array(
     'Net' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Math' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Jeremeamia\\SuperClosure' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
-    'Imagine' => array($vendorDir . '/imagine/imagine/lib'),
     'Illuminate' => array($vendorDir . '/laravel/framework/src'),
     'File' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Felixkiss\\UniqueWithValidator' => array($vendorDir . '/felixkiss/uniquewith-validator/src'),

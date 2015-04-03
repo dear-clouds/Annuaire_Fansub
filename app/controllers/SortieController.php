@@ -27,17 +27,17 @@ class SortieController extends BaseController {
 			'description'      => 'required',
 			'qualite'   => 'required',
 			'categorie' => 'required',
-			'file'	=> 'required|max:10000000',
-			'size'  => 'max:10000000',
-			'type'	=> 'mimes:audio/mpeg,audio/mp3,audio/mpeg3,image/jpeg,image/png,image/gif,video/mp4,video/avi,video/mkv'
+			'file'	=> 'required',
+			'size'  => '',
+			'type'	=> ''
 			);
-			
+		
 		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator->fails()) {
 			return Redirect::to('sortie/create')
 			->withErrors($validator)
-			->withInput(Input::except('password'));
+			->withInput(Input::except('license_file'));
 		} else {
 
 
@@ -58,7 +58,7 @@ class SortieController extends BaseController {
 			
 			// $id = Sortie::last($id);
 			$file = Input::file('file');
-			$destinationPath = 'images/' . Auth::user()->username;
+			$destinationPath = 'public/images/sorties';
 			$filename = str_random(20);
 			// $filename = $file->getClientOriginalName();
 			$extension = $file->getClientOriginalExtension(); 
@@ -66,15 +66,17 @@ class SortieController extends BaseController {
 			$size = Input::file('file')->getSize();
 			$upload_success = Input::file('file')->move($destinationPath, $filename . '.' . $extension);
 
-			Image::create(['name'       => $filename,
-				'user_id'    => Auth::user()->id,
-				'sortie_id'  => $sortie->id,
-				'username'    => Auth::user()->username,
-				'url'        => 'images/' . Auth::user()->username . '/' . $filename . '.' . $extension,
-				'size'			=> $size,
-				'extension'   => $file->getClientOriginalExtension(),
-				'type'		=> $type
-				]);
+			if( $upload_success ) {
+				Image::create(['name'       => $filename,
+					'user_id'    => Auth::user()->id,
+					'sortie_id'  => $sortie->id,
+					'username'    => Auth::user()->username,
+					'url'        => 'images/sorties' . '/' . $filename . '.' . $extension,
+					'size'			=> $size,
+					'extension'   => $file->getClientOriginalExtension(),
+					'type'		=> $type
+					]);
+			}
 
 			return Redirect::to('')->with('success', 'Votre sortie a bien été postée.');
 		}
@@ -94,7 +96,7 @@ class SortieController extends BaseController {
 		->where('sortie_id', '=', $sortie->id)
 		->first();
 
-		return View::make('sorties.show', compact('sortie', 'user'));
+		return View::make('sorties.show', compact('sortie', 'user', 'image'));
 	}
 
 
@@ -173,7 +175,7 @@ class SortieController extends BaseController {
 
 		if(Input::get('keywords'))
 			$results->where('title', 'LIKE', '%' . Input::get('keywords') . '%')
-					->orWhere('description', 'LIKE', '%' . Input::get('keywords') . '%');
+		->orWhere('description', 'LIKE', '%' . Input::get('keywords') . '%');
 
 		if(Input::get('categorie'))
 			$results->where('categorie', '=', Input::get('categorie'));
