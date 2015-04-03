@@ -1,0 +1,276 @@
+
+#title-logo {
+    font-family: 'Lobster', cursive;    
+    font-size: 25px;
+}
+
+#logo-bloc {
+    background: #27ae60;
+    padding:0px !important;
+    height: 190px;
+}
+#logo-circle img{
+    width:150px;
+    height:150px;
+}
+#btn-serie {
+    background-color:#2980b9;
+    height:95px;
+    text-transform:uppercase;
+    color:#f1c40f;
+    font-size:20px;
+    cursor:pointer;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+    padding:0 !important;
+}
+#btn-serie img{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+    -o-transition-duration:0.4s;
+    transition-duration:0.4s;
+}
+#btn-serie:hover img{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+}
+#txt-serie {
+    text-transform:uppercase;
+    position:absolute;
+    z-index:1;
+    margin:30px 0 0 60px;
+}
+#btn-anim {
+    background:#e08283;
+    height:95px;
+    text-transform:uppercase;
+    color:#f1c40f;
+    font-size:20px;
+    padding:0 !important;
+    cursor:pointer;
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+    -o-transition-duration:0.4s;
+    transition-duration:0.4s;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+#btn-anim img{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+    -o-transition-duration:0.4s;
+    transition-duration:0.4s;
+    width:195px;
+    height: 95px;
+}
+#btn-anim:hover img{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+}
+#btn-film {
+    background:#9b59b6;
+    height:95px;
+    text-transform:uppercase;
+    color:#f1c40f;
+    font-size:20px;
+    padding:0 !important;
+    cursor:pointer;
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+    -o-transition-duration:0.4s;
+    transition-duration:0.4s;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+#btn-film img{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+    -o-transition-duration:0.4s;
+    transition-duration:0.4s;
+}
+#btn-film:hover img{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+}
+#btn-manga {
+    background:#a2ded0;
+    height:95px;
+    text-transform:uppercase;
+    color:#f1c40f;
+    font-size:20px;
+    padding:0 !important;
+    cursor:pointer;
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+    -o-transition-duration:0.4s;
+    transition-duration:0.4s;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+#btn-manga img{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+    -o-transition-duration:0.4s;
+    transition-duration:0.4s;
+    width:195px;
+    height: 95px;
+}
+#btn-manga:hover img{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+}
+#txt-actu {
+    text-transform:uppercase;
+    font-size:25px;
+    position:absolute;
+    z-index:1;
+    color:#f1c40f;
+    margin-left:880px;
+    margin-top: 75px;
+    text-shadow: 0 1px 1px rgba(0,0,0,1);
+}
+#team-1{
+    background:#bdc3c7;
+    height:150px;
+    padding:0 !important;
+}
+#team-2{
+    background:#95a5a6;
+    height:150px;
+    padding:0 !important;
+}
+#team-gold{
+    background:#e67e22;
+    height:150px;
+    padding:0 !important;
+}
+#last-release {
+    background:#e74c3c;
+    height:50px;
+}
+#filter-film{
+    background:#9b59b6;
+    height:50px;
+}
+#filter-serie{
+    background:#2980b9;
+    height:50px;
+}
+#filter-anim{
+    background:#e08283;
+    height:50px;
+}
+#filter-manga{
+    background:#a2ded0;
+    height:50px;
+}
+#filter-more{
+    background:#989896;
+    height:50px;
+    padding:10px 0 0 30px;
+}
+#movie-template{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border:10px solid rgba(255, 255, 255, .5);
+    padding:0px !important; 
+}
+#movie-template img{
+    width:272.5px;
+    height:250px;
+}
+#bloc-title-movie{
+    position:absolute;
+    top:0;
+    left:0;
+    background:#f1c40f;
+    opacity:0.5;
+    padding:20px 0 20px 0;
+    z-index:1;
+}
+#title-movie{
+    position:absolute;
+    top:0;
+    left:0;
+    padding:10px 0 10px 0;
+    z-index:2;
+    color:white;
+}
+#bloc-title-team{
+    position:absolute;
+    bottom:0;
+    left:0;
+    background:#f1c40f;
+    opacity:0.5;
+    padding:20px 0 20px 0;
+    z-index:1;
+}
+#title-team{
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding:10px 0 10px 0;
+    z-index:2;
+    color:white;
+}
+#bloc-title-next{
+    position:absolute;
+    bottom:40px;
+    right:0;
+    background:black;
+    padding:20px 0 20px 0;
+    z-index:1;
+}
+#title-next{
+    position:absolute;
+    bottom:40px;
+    right:0;
+    padding:10px 0 10px 0;
+    z-index:2;
+    color:white;
+}
+#arrow-top {
+    padding-top:80px;
+}
+#footer {
+    background-color: #f39c12;
+    border-top: 5px solid black;
+    width:100%;
+    height:100px;
+
+}
+.txt-team {
+    position:absolute;
+    margin:50px 0 0 60px;
+    text-decoration:uppercase;
+    font-size:20px;
+}

@@ -1,0 +1,10 @@
+{
+    "name": "bishopb/vanilla",
+    "description": "Export of Vanilla Forums. Tagged semantically with no huge pack files.",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Bishop Bettini", "email": "bishop@php.net"
+        }
+    ]
+}

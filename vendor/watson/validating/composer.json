@@ -1,0 +1,29 @@
+{
+    "name": "watson/validating",
+    "description": "Eloquent model validating trait.",
+    "keywords": ["laravel", "eloquent", "validation"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dwight Watson",
+            "email": "dwight@studiousapp.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/database": "~4.2.6",
+        "illuminate/events": "~4.2.6",
+        "illuminate/support": "~4.2.6",
+        "illuminate/validation": "~4.2.6"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Watson\\Validating\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
