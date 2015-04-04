@@ -92,9 +92,7 @@ class SortieController extends BaseController {
 		->where('username', '=', $sortie->username)
 		->first();
 		
-		$image = DB::table('images')
-		->where('sortie_id', '=', $sortie->id)
-		->first();
+		$image = Image::join('sorties', 'sorties.id', '=', 'images.sortie_id')->first();
 
 		return View::make('sorties.show', compact('sortie', 'user', 'image'));
 	}

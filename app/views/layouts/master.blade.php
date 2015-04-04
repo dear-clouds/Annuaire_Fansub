@@ -59,11 +59,6 @@
     <li>{{ HTML::link('profile', 'Editer Profil') }}</li> 
     <li>{{ HTML::link('message', 'Messages') }}</li> 
     <li>{{ HTML::link('sortie/create', 'Poster une sortie') }}</li> 
-    </ul> 
-
-
-    <div class="navbar-right">
-    <ul class="nav navbar-nav">
     
     <li>{{ HTML::link('admin', 'Administration') }}</li>
     <li>{{ HTML::link('logout', 'Se déconnecter') }}</li>

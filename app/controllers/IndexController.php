@@ -42,9 +42,9 @@ class IndexController extends BaseController {
 						// 'http://sunasiateam.blogspot.com/feeds/posts/default?alt=rss',
 						// 'takaramono-fansub.ek.la',
 						// 'tdfansub.com',
-						// 'tokusatsu-fansub.fr',
-						// 'univers-asia-alma.eklablog.com',
-						// 'yankeesfansub.wordpress.com',
+						'tokusatsu-fansub.fr',
+						'univers-asia-alma.eklablog.com',
+						'yankeesfansub.wordpress.com',
 					);
 
 		$feed = new SimplePie();

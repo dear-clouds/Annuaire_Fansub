@@ -13,7 +13,7 @@
     <p><i>Ajouté le {{ $sortie->created_at }} par <a href="../profil/{{ $sortie->username }}">{{ $sortie->username }}</a></i></p>
 
 
-    <p><img src="../{{ $sortie->photo }}" class="img-responsive img-rounded" alt="photo"></p>
+    <p align="center"><img src="../{{ $image->url }}" class="img-responsive img-rounded" alt="photo" width="300px"></p>
 
     <blockquote><p><strong>Description :</strong></p>
     {{ $sortie->description }}</blockquote>
