@@ -59,6 +59,7 @@
     <li>{{ HTML::link('profile', 'Editer Profil') }}</li> 
     <li>{{ HTML::link('message', 'Messages') }}</li> 
     <li>{{ HTML::link('sortie/create', 'Poster une sortie') }}</li> 
+    <li>{{ HTML::link('screenshot/create', 'Ajouter un screenshot') }}</li> 
     
     <li>{{ HTML::link('admin', 'Administration') }}</li>
     <li>{{ HTML::link('logout', 'Se déconnecter') }}</li>

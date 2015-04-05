@@ -27,6 +27,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::resource('message', 'MessageController');
 	Route::resource('upload', 'UploadController');
 	Route::resource('sortie', 'SortieController');
+	Route::resource('screenshot', 'ScreenshotController');
 	Route::get('profile', 'UserController@profile');
 	Route::get('profil/{username}', 'UserController@show');
 

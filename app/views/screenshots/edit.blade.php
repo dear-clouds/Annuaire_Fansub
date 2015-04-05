@@ -8,28 +8,38 @@
 @section('content')
 </nav>
 
-<h1>Poster une sortie</h1>
+<h1>Editer une sortie</h1>
 
 {{ HTML::ul($errors->all() )}}
 
 <div class="form-group">
 
-	{{ Form::open(array('url'=>'sortie','files'=>true)) }}
+{{ Form::model($sortie, array('route' => array('sortie.update', $sortie->id), 'method' => 'PUT', 'files'=>true)) }}
 
 	{{Form::label('image','Image')}}
-	<div class="form-control">
-		{{ Form::file('file','',array('id'=>'')) }}
-	</div>
+        <div class="form-control">
+            {{ Form::file('file','',array('id'=>'')) }}
+		</div>
 
 
-	
-	<br/>
+        
+        <br/>
 
 
 
 
 	{{Form::label('categorie','Catégorie')}}
-	{{ Form::select('categorie', $categories, null, array('class' => 'form-control')) }}
+	{{ Form::select('categorie', array(
+	'Animes' => 'Animes',
+	'Séries' => 'Séries',
+	'Films' => 'Films',
+	'Mangas' => 'Mangas',
+	'Emissions' => 'Emissions',
+	'Doujinshis' => 'Doujinshis',
+	'Karaokes' => 'Karaokes',
+	'OAV' => 'OAV',
+	'Autre' => 'Autre'
+	), null, array('class' => 'form-control')) }}
 </div>
 
 <div class="form-group">

@@ -15,7 +15,9 @@ class SortieController extends BaseController {
 
 	public function create()
 	{
-		return View::make('sorties.create');
+		$categories = CategorieType::lists('title');
+		
+		return View::make('sorties.create', compact('categories'));
 	}
 
 
