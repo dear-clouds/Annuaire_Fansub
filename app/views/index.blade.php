@@ -31,13 +31,13 @@
         <div class="item">
           <img src="../css/images/slide/slide2.png" alt="...">
           <div class="carousel-caption">
-            Dernière sortie de 
+            Dernière sortie de
           </div>
         </div>
         <div class="item">
           <img src="../css/images/slide/slide3.png" alt="...">
           <div class="carousel-caption">
-            Nouveau film de 
+            Nouveau film de
           </div>
         </div>
         ...
@@ -84,7 +84,7 @@
 <div class="row">
 
   @foreach ($sorties as $sortie)
-  
+
   <div class="col-md-3" id="movie-template">
     <div class="col-md-12 text-center" id="title-movie">{{ $sortie->title }}</div>
     <div class="col-md-12 text-center" id="bloc-title-movie"></div>
@@ -96,23 +96,23 @@
   </div>
 
 
-  @endforeach  
+  @endforeach
 
 
   @foreach ($feed->get_items() as $item)
-  
+
   <div class="col-md-3" id="movie-template">
     <div class="col-md-12 text-center" id="title-movie">{{ $item->get_title() }}</div>
     <div class="col-md-12 text-center" id="bloc-title-movie"></div>
     <div class="col-md-12 text-center" id="title-team">{{ $feed->get_title() }}</div>
     <div class="col-md-12 text-center" id="bloc-title-team"></div>
-    <div><a href="{{ $item->get_permalink() }}" class="col-md-5 text-center" id="title-next">{{ $feed->get_title() }}</a></div>
+    <div><a href="{{ $item->get_permalink() }}" class="col-md-5 text-center" id="title-next" target="_blank">VOIR</a></div>
     <div class="col-md-5 text-center" id="bloc-title-next"></div>
     <span class=""><img src="{{ $item->get_link() }}" alt="{{ $item->get_title() }}"></span>
   </div>
 
 
-  @endforeach 
+  @endforeach
 
       <!-- <div class="col-md-3" id="movie-template">
         <div class="col-md-12 text-center" id="title-movie">Titre du film</div>
